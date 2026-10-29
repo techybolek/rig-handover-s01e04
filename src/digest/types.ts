@@ -11,7 +11,7 @@ export type DigestRow = {
   last: string;
 };
 
-export type Night = { rows: DigestRow[]; badLines: number };
+export type Night = { rows: DigestRow[]; badLines: number; counts: Record<Status, number> };
 
 // null: no runs/<night>.jsonl on disk. Rows are sorted by job.
 export type ReadNight = (runsDir: string, night: string) => Night | null;
